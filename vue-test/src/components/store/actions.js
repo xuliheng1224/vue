@@ -1,12 +1,8 @@
 const actions = {
-  add ({
-    commit
-  }, msg) {
+  add({ commit }, msg) {
     commit('add', msg)
   },
-  modify ({
-    commit
-  }, size) {
+  modify({ commit }, size) {
     commit('modify', size)
   }
 }

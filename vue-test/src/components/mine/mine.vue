@@ -1,12 +1,10 @@
 <template>
-    <div>
-        我的{{msg}}
-
-        <input type="button" value="点击个人信息" @click='information'>
-
-        <v-touch v-on:swipeleft='left'>左划</v-touch>
-        <v-touch v-on:swiperight='right'>右划</v-touch>
-    </div>
+  <div>
+    我的{{msg}}
+    <input type="button" value="点击个人信息" @click="information">
+    <v-touch v-on:swipeleft="left">左划</v-touch>
+    <v-touch v-on:swiperight="right">右划</v-touch>
+  </div>
 </template>
 
 <script>
@@ -25,7 +23,7 @@ export default {
     },
     information() {
       this.$router.push({
-        path: "/mine/information/information",
+        path: "/mine/information/information"
         // params: {
         //   id: "information"
         // }
@@ -39,8 +37,7 @@ export default {
       a: "aaa",
       b: "bbb"
     };
-    this.$http
-      .get("static/data.json", { params: obj })
+    this.$get("static/data.json", { params: obj })
       .then(res => {
         console.log(res);
       })

@@ -6,13 +6,16 @@ import VueRouter from 'vue-router'
 import router from './router'
 import VueTouch from 'vue-touch'
 import store from './components/store/store'
-import axios from 'axios'
-Vue.prototype.$http = axios;
-
+import { get, post } from './util/request'
+// import axios from 'axios'
+// Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(VueTouch)
+
+Vue.prototype.$get = get
+Vue.prototype.$post = post
 
 // 增加cordova文件
 if (window.location.protocol === 'file:') {
@@ -28,7 +31,8 @@ if (window.location.protocol === 'file:') {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router, store,
+  router,
+  store,
   components: { App },
   template: '<App/>'
 })

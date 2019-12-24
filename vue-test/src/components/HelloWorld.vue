@@ -154,7 +154,9 @@ export default {
   },
   mounted() {
     this.$refs.p3.className = "p33333";
-    console.log(this);
+    this.$get("/api/light").then(res => {
+      console.log(res);
+    });
   }
 };
 </script>
